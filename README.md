@@ -101,15 +101,15 @@ The loss pushes $\mathbf{v}_o \cdot \mathbf{u}_c$ to be large (positive word sho
 
 ### Gradient Derivations
 
-Let $s_o = \mathbf{v}_o \cdot \mathbf{u}_c$ and $s_i = \mathbf{v}_{n_i} \cdot \mathbf{u}_c$.
+Let $s\_o = \mathbf{v}\_o \cdot \mathbf{u}\_c$ and $s\_i = \mathbf{v}\_{n\_i} \cdot \mathbf{u}\_c$.
 
-**Gradient w.r.t. $\mathbf{u}_c$** (centre embedding):
+Gradient w.r.t. $\mathbf{u}_c$ (centre embedding):
 
-$$\frac{\partial \mathcal{L}}{\partial \mathbf{u}_c}
-= \underbrace{(\sigma(s_o) - 1)}_{\text{error on positive}} \cdot \mathbf{v}_o
-+ \sum_{i=1}^{k} \underbrace{\sigma(s_i)}_{\text{error on negatives}} \cdot \mathbf{v}_{n_i}$$
+$$
+\frac{\partial \mathcal{L}}{\partial \mathbf{u}_c} = \underbrace{(\sigma(s_o) - 1)}_{\text{error on positive}} \cdot \mathbf{v}_o + \sum_{i=1}^{k} \underbrace{\sigma(s_i)}_{\text{error on negatives}} \cdot \mathbf{v}_{n_i}
+$$
 
-**Gradient w.r.t. $\mathbf{v}_o$** (positive context embedding):
+Gradient w.r.t. $\mathbf{v}_o$ (positive context embedding):
 
 $$\frac{\partial \mathcal{L}}{\partial \mathbf{v}_o} = (\sigma(s_o) - 1) \cdot \mathbf{u}_c$$
 
