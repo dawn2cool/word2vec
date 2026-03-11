@@ -1,0 +1,5 @@
+numpy>=1.23.0
+
+# optional — for plotting and evaluation only:
+matplotlib>=3.5.0
+scikit-learn>=1.0.0
